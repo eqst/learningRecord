@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>防抖</title>
+</head>
+<style>
+  #size{
+    width:200px;
+    height:200px;
+    background-color: beige;
+  }
+</style>
+<body>
+  <div>
+    <!-- 连续多次点击 -->
+    <button id="btn">
+      防抖
+    </button>
+    <!-- input输入 -->
+    <input id="input"/>
+    <select id="select">
+      <option>saber</option>
+      <option>archer</option>
+      <option>caster</option>
+      <option>assisan</option>
+      <option>ruler</option>
+    </select>
+
+    <!-- 浏览器窗口大小改变 -->
+    <div id="size">
+
+    </div>
+  </div>
+  <script type="module">
+    import { debounce,throttle } from "../js/防抖节流.js"
+    let btn = document.getElementById('btn')
+
+    function csl(arg) {
+      console.log(`------${arg}-------------`);
+    }
+
+    // btn.addEventListener('click',debounce(csl,1000))
+
+    let input = document.getElementById('input')
+    input.addEventListener('input',debounce(csl,800))
+
+    let select = document.getElementById('select')
+    select.addEventListener('change',debounce(csl,800))
+
+    let div = document.getElementById('size')
+
+    const setPageSize = () => {
+      div.style.width = '500px'
+    }
+    window.onresize=debounce(setPageSize,800)
+  </script>
+</body>
+</html>

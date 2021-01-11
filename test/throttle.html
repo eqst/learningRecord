@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>节流</title>
+</head>
+<body>
+  <div>
+    <button id="btn">
+      连续点击
+    </button>
+  </div>
+  <script type="module">
+    import { throttle } from "../js/防抖节流.js"
+    let btn = document.getElementById('btn')
+    function csl(arg) {
+      console.log(`---------${arg}---------`);
+    }
+
+    btn.addEventListener('click',throttle(csl,1000))
+    
+  </script>
+</body>
+</html>
