@@ -1,0 +1,36 @@
+#wapper{
+    width: 700px;
+    height: 300px;
+    vertical-align: middle;
+    background-color: antiquewhite;
+}
+
+#box{
+    float: left;
+    width: 400px;
+    height: 200px;
+    vertical-align: middle;
+    background-color: burlywood;
+}
+
+#content{
+    width: 200px;
+    height: 50px;
+    /* vertical-align: middle; */
+    line-height: 50px;
+    text-align: center;
+    background-color: darkcyan;
+    float: left;
+}
+
+#boxText{
+    display: block;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+    font-size: 30px;
+}
+
+#text{
+    font-size: 24px;
+}
