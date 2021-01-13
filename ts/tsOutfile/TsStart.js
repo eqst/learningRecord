@@ -20,7 +20,33 @@ var Student = /** @class */ (function () {
 }());
 var student1 = new Student("王", "小", "明");
 function cslName(student) {
-    console.log(student1);
     return student.fullName;
 }
 document.body.innerHTML = cslName(student1) + '' + sayName(user);
+// 枚举
+var Color;
+(function (Color) {
+    Color[Color["red"] = 1] = "red";
+    Color[Color["green"] = 2] = "green";
+    Color[Color["blue"] = 3] = "blue";
+})(Color || (Color = {}));
+var c = Color.red;
+console.log(Color);
+console.log(Color[Color.red]);
+console.log(c);
+// any
+var saber = [1];
+saber = ['saber'];
+// saber = () =>{
+//     console.log(1111111111)
+// }
+console.log(saber);
+// 类型判断
+// declare function create(o: object | null): void;
+// create({ prop: 0 }); // OK
+var someVlaue = 'this is a dog';
+var strLength = someVlaue.length;
+var strLength1 = someVlaue.length;
+console.log(strLength, strLength1);
+// let someValue: any = "this is a string";
+// let strLength: number = (<string>someValue).length;
